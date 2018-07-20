@@ -137,3 +137,8 @@ status
 空行
 <entity-body>
 ```
+
+## curl(客户端查看HTTP命令)
+```
+curl -v https://github.com/ajun568
+```
