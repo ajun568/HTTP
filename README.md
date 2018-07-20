@@ -49,4 +49,27 @@ HTTP/2:
 HTTPS:
 安全版本
 ```
+
+### HTTP协议三次握手（三次网络传输）
+```
+主要规避网络延迟导致服务器开销的问题
 
+名词解释（个人解释，具体理解请参考原单词）：
+1，SYN：同步
+2，ACK：反馈
+3，send：发送状态
+4，recived：接收状态
+5，established：确定状态
+
+第一次握手：
+client发送SYN(J)给sever，等待sever的ACK回复，进入SYN-send状态
+
+第二次握手：
+sever接收到SYN(J)，返回一个ACK(J+1),并发送一个自己的SYN(K)包，等待slient的ACK回复，进入SYN-recived状态
+
+第三次握手：
+client接收到sever发回的SYN(J+1)包后，进入established状态,然后接收sever发来的SYN(K),并返回给sever端一个ACK(K+1),后把sever状态设置为established状态
+
+为什么要三次握手？
+因为服务器如果创建失败了，自己不知道，会导致服务器一直开销
+```
