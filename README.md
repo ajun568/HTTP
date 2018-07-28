@@ -145,6 +145,8 @@ curl -v https://github.com/ajun568
 
 ## 跨域
 ```
+浏览器遵守同源策略(协议，域名，端口)
+
 浏览器发送请求时不知道是否会跨域，如果未设置跨域，浏览器会将请求内容忽略，并报错。
 ```
 ### 实现跨域
@@ -158,4 +160,15 @@ curl -v https://github.com/ajun568
 浏览器在像link标签，img标签，script标签里写路径加载内容时，是允许跨域的，并不在乎你是否设置请求头。
 
 利用script标签不受跨域限制去加载一个链接，并通过这个链接访问内容。
+```
+#### CORS
+```
+简单请求不会发送预请求，复杂的请求会发送cors预请求。
+简单请求包括：GET,HEAD,POST
+Content-Type包括：text/plain;multipart/form-data;application/x-www-form-urlencoded
+
+修改项：
+‘Access-Control-Allow-Headers’,
+'Access-Control-Allow-Methods',
+'Access-Control-Max-Age'(再次发送预请求的时间间隔)
 ```
