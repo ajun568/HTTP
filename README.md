@@ -172,3 +172,30 @@ Content-Type包括：text/plain;multipart/form-data;application/x-www-form-urlen
 'Access-Control-Allow-Methods',
 'Access-Control-Max-Age'(再次发送预请求的时间间隔)
 ```
+
+## 缓存(Cache-Control)
+```
+一般情况下都指的是代理服务器的缓存
+
+分为：public(http经过的地方都进行缓存),private(发起请求的浏览器进行缓存)和no-cache(不进行缓存)
+
+设置缓存后，在客户端缓存了，不会在服务端验证，在实际打包后，会携带一串时间戳的hash码，若内容变化，则hash码变化，ETag这个标识发生变化，重新请求资源。
+
+缓存到期时间：max-age
+s-maxage(为代理服务器设置的缓存，在有代理服务器时会先走该设置)
+max-stale(在该时间内，可以使用过期的缓存，无需从原服务器请求)
+```
+### 缓存策略
+#### 强缓存
+```
+其实就是在HTTP头部设置了缓存(如缓存时间)，下一次使用时，根据缓存时间观察是否过期，未过期直接使用缓存加载文件。
+Last-Modified：文件最后一次的修改时间。
+```
+#### 协商缓存
+```
+协商缓存其实就是缓存已经过期，服务器通过If-Moified-Since和If-None-Match这两个字段判断内容是否有修改，没有修改则返回状态码304，协商缓存结束。
+```
+#### 启发式缓存
+```
+遇到默认缓存的情况，都是启发式缓存的锅。
+```
