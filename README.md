@@ -218,4 +218,10 @@ User-Agent:可以用来区分访问设备类型，PC端or移动端
 [User-Agent用法小结跳转链接](https://blog.csdn.net/crper/article/details/52005514)
 
 ## 重定向
-[302跳转的URL劫持，本人很懒，直接甩链接](https://blog.csdn.net/sinat_37059404/article/details/77412748)
+[302跳转的URL劫持，本人很懒，直接甩链接](https://blog.csdn.net/sinat_37059404/article/details/77412748of)
+
+#### 不厚道的补两个关于端口占用的命令，方便自己查找
+```
+查看进程：lsof -i :端口号
+杀死进程：kill -9 端口ID
+```
