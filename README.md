@@ -209,3 +209,9 @@ Last-Modified：文件最后一次的修改时间。
 
 小tip：浏览器tcp连接的并发限制是6个
 ```
+
+## 数据协商
+```
+包括请求(Accept)和返回(Content)两种：包括Type,Encoding和Language,其中Encoding用的最多的是gulp
+User-Agent:PC端or移动端
+```
