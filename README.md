@@ -213,5 +213,6 @@ Last-Modified：文件最后一次的修改时间。
 ## 数据协商
 ```
 包括请求(Accept)和返回(Content)两种：包括Type,Encoding和Language,其中Encoding用的最多的是gulp
-User-Agent:PC端or移动端
+User-Agent:可以用来区分访问设备类型，PC端or移动端
 ```
+[User-Agent用法小结跳转链接](https://blog.csdn.net/crper/article/details/52005514)
