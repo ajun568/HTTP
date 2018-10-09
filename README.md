@@ -225,3 +225,7 @@ User-Agent:可以用来区分访问设备类型，PC端or移动端
 查看进程：lsof -i :端口号
 杀死进程：kill -9 端口ID
 ```
+#### 开启过滤跨域模式
+```
+open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-data-dir=/Users/wuyijun/Documents/chromeDevUserData
+```
